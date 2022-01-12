@@ -7,6 +7,7 @@ import {LayoutModule} from "./layout/layout.module";
 import {HttpClientModule} from "@angular/common/http";
 import { ItemOverviewComponent } from './item-overview/item-overview.component';
 import { NameFilterPipe } from './pipes/name-filter.pipe';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NameFilterPipe } from './pipes/name-filter.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    LayoutModule
+    LayoutModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,8 @@ import {Item} from "../model/item";
 export class ItemOverviewComponent implements OnInit {
 
   items: Item[] = [];
+  searchText? :string;
+
 
   constructor(private itemService: ItemServiceService) { }
 
