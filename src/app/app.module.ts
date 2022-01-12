@@ -5,10 +5,12 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {LayoutModule} from "./layout/layout.module";
 import {HttpClientModule} from "@angular/common/http";
+import { ItemOverviewComponent } from './item-overview/item-overview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ItemOverviewComponent,
   ],
   imports: [
     BrowserModule,
