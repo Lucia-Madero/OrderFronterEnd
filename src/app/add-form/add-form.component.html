@@ -1,7 +1,7 @@
 <form [formGroup]="addItemForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="name">Name</label>
-    <input id="name" , type="text" , formControlName="name">
+    <input id="name" type="text" formControlName="name">
   </div>
 
   <div>
@@ -23,4 +23,5 @@
     <label for="stockUrgency">Stock urgency</label>
     <input id="stockUrgency" type="text" formControlName="stockUrgency">
   </div>
+  <button type="submit">Submit</button>
 </form>
