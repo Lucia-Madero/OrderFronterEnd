@@ -6,11 +6,13 @@ import {AppRoutingModule} from './app-routing.module';
 import {LayoutModule} from "./layout/layout.module";
 import {HttpClientModule} from "@angular/common/http";
 import { ItemOverviewComponent } from './item-overview/item-overview.component';
+import { NameFilterPipe } from './pipes/name-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemOverviewComponent,
+    NameFilterPipe,
   ],
   imports: [
     BrowserModule,

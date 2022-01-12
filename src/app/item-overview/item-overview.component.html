@@ -1,22 +1,22 @@
-<section>
-  <h3 class="section-title">Items</h3>
-  <ng-container *ngIf="items">
-    <ul class="card-list" >
-      <div *ngFor="let item of items">
-      <li class="card">
-        <div class="card-title">{{item.name}}</div>
-        <img class="card-image" src="../../assets/img/item-image.png" alt="item image">
-        <div class="card-footer">
-          <div>Price: &euro; {{item.price}}</div>
-          <div class="stock">
-            <span>{{item.stockUrgency}}</span>
-            <img class="icon" src="../../assets/img/warning-icon.png" alt="warning">
-          </div>
+<main>
+  <section>
+    <h3 class="section-title">Items</h3>
+    <ng-container *ngIf="items">
+      <ul class="card-list">
+        <div *ngFor="let item of items">
+          <li class="card">
+            <div class="card-title">{{item.name}}</div>
+            <img class="card-image" src="../../assets/img/item-image.png" alt="item image">
+            <div class="card-footer">
+              <div>Price: &euro; {{item.price}}</div>
+              <div class="stock">
+                <span>{{item.stockUrgency}}</span>
+                <img class="icon" src="../../assets/img/warning-icon.png" alt="warning">
+              </div>
+            </div>
+          </li>
         </div>
-      </li>
-      </div>
-    </ul>
-  </ng-container>
-</section>
-
-
+      </ul>
+    </ng-container>
+  </section>
+</main>
