@@ -8,19 +8,23 @@ import {HttpClientModule} from "@angular/common/http";
 import { ItemOverviewComponent } from './item-overview/item-overview.component';
 import { NameFilterPipe } from './pipes/name-filter.pipe';
 import {FormsModule} from "@angular/forms";
+import { AddFormComponent } from './add-form/add-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemOverviewComponent,
     NameFilterPipe,
+    AddFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     LayoutModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

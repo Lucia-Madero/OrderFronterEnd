@@ -10,7 +10,6 @@ import {Observable} from "rxjs";
 export class ItemServiceService {
 
   private readonly itemsUrl: string;
-  private readonly items: Item[] = [];
 
   httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
@@ -21,6 +20,10 @@ export class ItemServiceService {
 
   getItems(): Observable<Item[]> {
     return this.httpClient.get<Item[]>(this.itemsUrl);
+  }
+
+  addItem(item: Item): Observable<Item> {
+    return this.httpClient.post<Item>(this.itemsUrl, item, this.httpOptions);
   }
 
 }
