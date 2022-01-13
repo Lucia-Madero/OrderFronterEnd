@@ -1,48 +1,55 @@
 <form [formGroup]="addItemForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="name">Name</label>
+    <br>
     <input id="name" type="text" formControlName="name">
   </div>
 
   <div>
     <label for="description">Description</label>
-    <input id="description" maxlength="250" type="text" formControlName="description">
+    <br>
+    <textarea class="description" id="description" formControlName="description" maxlength="255"></textarea>
   </div>
 
   <div>
     <label for="price">Price</label>
+    <br>
     <input id="price" type="number" min="1" formControlName="price">
   </div>
 
   <div>
     <label for="amountOfStock">Amount of stock</label>
+    <br>
     <input id="amountOfStock" min="1" type="number" formControlName="amountOfStock">
   </div>
 
   <div class="row">
     <div class="col-4">
-      <button type="submit" [disabled]="!addItemForm.valid">Create</button>
+      <button class=" btn-create" type="submit" [disabled]="!addItemForm.valid">Create</button>
     </div>
     <div class="col-4">
-      <button type="reset" (click)="addItemForm.reset()" [routerLink]="['..']" [disabled]="!addItemForm.valid  ">Cancel</button>
+      <button class="btn-create " type="reset" (click)="addItemForm.reset()" [routerLink]="['..']"
+              [disabled]="!addItemForm.valid  ">
+        Cancel
+      </button>
     </div>
   </div>
 
 
-    <div *ngIf="name.errors?.['minlength']  && !name.pristine">
-      <p class="invalid-message">Your pet's <strong>name</strong> must be at least 3 characters long.</p>
-    </div>
+  <div *ngIf="(name.errors?.['minlength' ] || name.errors?.['required'])  && !name.pristine">
+    <p class="invalid-message">Your item's <strong>name</strong> must be at least 3 characters long.</p>
+  </div>
 
-    <div *ngIf="description.errors?.['required'] && !description.pristine">
-      <p class="invalid-message">Please <strong>fill in</strong> this field.</p>
-    </div>
+  <div *ngIf="description.errors?.['required'] && !description.pristine">
+    <p class="invalid-message">Please <strong>fill in</strong> description.</p>
+  </div>
 
-    <div *ngIf="price.errors?.['required'] && !price.pristine">
-      <p class="invalid-message">Please <strong>fill in</strong> this field.</p>
-    </div>
+  <div *ngIf="price.errors?.['required'] && !price.pristine">
+    <p class="invalid-message">Please <strong>fill in</strong> price.</p>
+  </div>
 
-    <div *ngIf="amountOfStock.errors?.['required']  && !amountOfStock.pristine">
-      <p class="invalid-message">Please <strong>fill in</strong> this field.</p>
-    </div>
+  <div *ngIf="amountOfStock.errors?.['required']  && !amountOfStock.pristine">
+    <p class="invalid-message">Please <strong>fill in</strong> stock.</p>
+  </div>
 
 </form>

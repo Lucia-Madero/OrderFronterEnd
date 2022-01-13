@@ -16,9 +16,9 @@ export class AddFormComponent implements OnInit {
   addItemForm: FormGroup = this.formBuilder.group(
     {
       name: ['', [Validators.required, Validators.minLength(3)]],
-      description: ['', [Validators.required]],
-      price: ['', [Validators.required]],
-      amountOfStock: ['', [Validators.required]],
+      description: ['', [Validators.required, Validators.maxLength(255)]],
+      price: ['', [Validators.required, Validators.min(1)]],
+      amountOfStock: ['', [Validators.required, Validators.min(1)]],
     }
   )
 

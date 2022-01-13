@@ -10,7 +10,7 @@ export class NameFilterPipe implements PipeTransform {
     if (filter === undefined) {
       return items;
     }
-    return items.filter(item => item.name.toLowerCase().includes(filter.toLowerCase()));
+    return items.filter(item => item.name.toLowerCase().startsWith(filter.toLowerCase()));
   }
 
 }
