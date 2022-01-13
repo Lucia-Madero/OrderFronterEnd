@@ -19,23 +19,30 @@
     <input id="amountOfStock" type="text" formControlName="amountOfStock">
   </div>
 
+  <div class="row">
+    <div class="col-4">
+      <button type="submit" [disabled]="!addItemForm.valid">Create</button>
+    </div>
+    <div class="col-4">
+      <button type="submit" (click)="addItemForm.reset()" [disabled]="!addItemForm.valid  ">Cancel</button>
+    </div>
+  </div>
 
-  <button type="submit" [disabled]="!addItemForm.valid">Submit</button>
 
-<!--  <div *ngIf="name.errors?.['minlength']">-->
-<!--    <p>Your pet's <strong>name</strong> must be at least 3 characters long.</p>-->
-<!--  </div>-->
+    <div *ngIf="name.errors?.['minlength']  && !name.pristine">
+      <p class="invalid-message">Your pet's <strong>name</strong> must be at least 3 characters long.</p>
+    </div>
 
-<!--  <div *ngIf="description.errors?.['required'] && !description.pristine">-->
-<!--    <p>Please <strong>fill in</strong> this field.</p>-->
-<!--  </div>-->
+    <div *ngIf="description.errors?.['required'] && !description.pristine">
+      <p class="invalid-message">Please <strong>fill in</strong> this field.</p>
+    </div>
 
-<!--  <div *ngIf="price.errors?.['required']">-->
-<!--    <p>Please <strong>fill in</strong> this field.</p>-->
-<!--  </div>-->
+    <div *ngIf="price.errors?.['required'] && !price.pristine">
+      <p class="invalid-message">Please <strong>fill in</strong> this field.</p>
+    </div>
 
-<!--  <div *ngIf="amountOfStock.errors?.['required']">-->
-<!--    <p>Please <strong>fill in</strong> this field.</p>-->
-<!--  </div>-->
+    <div *ngIf="amountOfStock.errors?.['required']  && !amountOfStock.pristine">
+      <p class="invalid-message">Please <strong>fill in</strong> this field.</p>
+    </div>
 
 </form>

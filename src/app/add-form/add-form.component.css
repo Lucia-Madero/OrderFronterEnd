@@ -1,0 +1,9 @@
+
+input.ng-dirty.ng-invalid {
+  border-color: #db6a6a;
+  box-shadow: 0 0 0 0.25rem rgba(221, 0, 83, 0.25);
+}
+
+.invalid-message {
+  color: #db6a6a;
+}
