@@ -8,7 +8,9 @@
   <div>
     <label for="description">Description</label>
     <br>
-    <textarea class="description" id="description" formControlName="description" maxlength="255"></textarea>
+    <textarea class="description" id="description" formControlName="description" [maxlength]="descriptionMaxLength" ></textarea>
+    <br>
+    <small><code>{{description.value.length}}</code> / <code>{{descriptionMaxLength}}</code></small>
   </div>
 
   <div>

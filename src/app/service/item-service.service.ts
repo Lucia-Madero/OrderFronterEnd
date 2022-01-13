@@ -26,4 +26,7 @@ export class ItemServiceService {
     return this.httpClient.post<Item>(this.itemsUrl, item, this.httpOptions);
   }
 
+  findById(id: string): Observable<Item> {
+    return this.httpClient.get<Item>(this.itemsUrl+ '/' + id);
+  }
 }

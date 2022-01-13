@@ -1,5 +1,6 @@
 .description{
-  resize: vertical;
+  /*resize: vertical;*/
+  justify-content: flex-end;
 }
 input.ng-dirty.ng-invalid {
   border-color: #db6a6a;

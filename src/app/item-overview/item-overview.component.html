@@ -14,7 +14,7 @@
 
     <ng-container *ngIf="items">
       <ul class="card-list">
-        <div *ngFor="let item of items | nameFilter: searchText">
+        <div *ngFor="let item of items | nameFilter: searchText" (click)="viewItem(item)" >
           <li class="card">
             <div class="card-title">{{item.name}}</div>
             <img class="card-image" src="../../assets/img/item-image.png" alt="item image">

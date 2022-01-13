@@ -22,6 +22,8 @@ export class AddFormComponent implements OnInit {
     }
   )
 
+  descriptionMaxLength: number = 255;
+
   constructor(
     private formBuilder: FormBuilder,
     private itemService: ItemServiceService,
