@@ -24,7 +24,7 @@
       <button type="submit" [disabled]="!addItemForm.valid">Create</button>
     </div>
     <div class="col-4">
-      <button type="submit" (click)="addItemForm.reset()" [routerLink]="['items']" [disabled]="!addItemForm.valid  ">Cancel</button>
+      <button type="reset" (click)="addItemForm.reset()" [routerLink]="['..']" [disabled]="!addItemForm.valid  ">Cancel</button>
     </div>
   </div>
 
