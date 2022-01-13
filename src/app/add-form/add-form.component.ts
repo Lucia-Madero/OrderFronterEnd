@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ItemServiceService} from "../service/item-service.service";
+import {Item} from "../model/item";
 
 @Component({
   selector: 'app-add-form',
@@ -9,15 +10,15 @@ import {ItemServiceService} from "../service/item-service.service";
 })
 export class AddFormComponent implements OnInit {
 
-  addItemForm = this.formBuilder.group(
+  addItemForm: FormGroup = this.formBuilder.group(
     {
-      name: '',
-      description: '',
-      price: '',
-      amountOfStock: '',
-      stockUrgency: ''
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      description: ['', [Validators.required]],
+      price: [0, [Validators.required]],
+      amountOfStock: [0, [Validators.required]],
     }
   )
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -27,7 +28,9 @@ export class AddFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.itemService.addItem(this.addItemForm.getRawValue().subscribe());
+    const item: Item =  this.addItemForm.value as Item;
+    this.itemService.addItem(item).subscribe();
     this.addItemForm.reset();
+
   }
 }

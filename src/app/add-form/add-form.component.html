@@ -19,9 +19,23 @@
     <input id="amountOfStock" type="text" formControlName="amountOfStock">
   </div>
 
-  <div>
-    <label for="stockUrgency">Stock urgency</label>
-    <input id="stockUrgency" type="text" formControlName="stockUrgency">
-  </div>
-  <button type="submit">Submit</button>
+
+  <button type="submit" [disabled]="!addItemForm.valid">Submit</button>
+
+<!--  <div *ngIf="name.errors?.['minlength']">-->
+<!--    <p>Your pet's <strong>name</strong> must be at least 3 characters long.</p>-->
+<!--  </div>-->
+
+<!--  <div *ngIf="description.errors?.['required'] && !description.pristine">-->
+<!--    <p>Please <strong>fill in</strong> this field.</p>-->
+<!--  </div>-->
+
+<!--  <div *ngIf="price.errors?.['required']">-->
+<!--    <p>Please <strong>fill in</strong> this field.</p>-->
+<!--  </div>-->
+
+<!--  <div *ngIf="amountOfStock.errors?.['required']">-->
+<!--    <p>Please <strong>fill in</strong> this field.</p>-->
+<!--  </div>-->
+
 </form>
