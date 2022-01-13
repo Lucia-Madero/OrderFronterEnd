@@ -6,17 +6,17 @@
 
   <div>
     <label for="description">Description</label>
-    <input id="description" type="text" formControlName="description">
+    <input id="description" maxlength="250" type="text" formControlName="description">
   </div>
 
   <div>
     <label for="price">Price</label>
-    <input id="price" type="number" formControlName="price">
+    <input id="price" type="number" min="1" formControlName="price">
   </div>
 
   <div>
     <label for="amountOfStock">Amount of stock</label>
-    <input id="amountOfStock" type="text" formControlName="amountOfStock">
+    <input id="amountOfStock" min="1" type="text" formControlName="amountOfStock">
   </div>
 
   <div class="row">
@@ -24,7 +24,7 @@
       <button type="submit" [disabled]="!addItemForm.valid">Create</button>
     </div>
     <div class="col-4">
-      <button type="submit" (click)="addItemForm.reset()" [disabled]="!addItemForm.valid  ">Cancel</button>
+      <button type="submit" (click)="addItemForm.reset()" [routerLink]="['items']" [disabled]="!addItemForm.valid  ">Cancel</button>
     </div>
   </div>
 

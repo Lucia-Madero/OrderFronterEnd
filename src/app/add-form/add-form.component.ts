@@ -56,7 +56,7 @@ export class AddFormComponent implements OnInit {
           description: `Created ${item.name}`,
           type: AlertMessageType.SUCCESS
         });
-        this.router.navigate!(['items']);
+        this.router.navigate(['items/:id']);
       },
       error: (error) => {
         this.alertMessageService.publish({
