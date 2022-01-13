@@ -9,7 +9,8 @@ import {ItemOverviewComponent} from './item-overview/item-overview.component';
 import {NameFilterPipe} from './pipes/name-filter.pipe';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AddFormComponent} from './add-form/add-form.component';
-import { ItemDetailComponent } from './item-detail/item-detail.component';
+import {ItemDetailComponent} from './item-detail/item-detail.component';
+import { UpdateItemFormComponent } from './update-item-form/update-item-form.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
     NameFilterPipe,
     AddFormComponent,
     ItemDetailComponent,
+    UpdateItemFormComponent,
   ],
   imports: [
     BrowserModule,
