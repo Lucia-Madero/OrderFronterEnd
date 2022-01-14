@@ -8,7 +8,8 @@ const routes: Routes = [
   {path: '', redirectTo: 'items', pathMatch: 'full'},
   {path: 'items', component: ItemOverviewComponent},
   {path: 'items/add-item', component: ItemFormComponent},
-  {path: 'items/:id', component: ItemDetailComponent}
+  {path: 'items/:id', component: ItemDetailComponent},
+  {path: 'items/edit/:id', component: ItemFormComponent}
 ];
 
 @NgModule({

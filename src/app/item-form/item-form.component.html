@@ -27,11 +27,13 @@
 
   <div class="row">
     <div class="col-4">
-      <button class=" btn-create" type="submit" [disabled]="!itemForm.valid">Create</button>
+      <button *ngIf="isAddMode" class=" btn-create" type="submit" [disabled]="!itemForm.valid">Create</button>
+      <button *ngIf="!isAddMode" class=" btn-create" type="button" (click)="updateItem()" [disabled]="!itemForm.valid" routerLink="/items/{{id}}">Update</button>
+
     </div>
     <div class="col-4">
-      <button class="btn-create " type="reset" (click)="itemForm.reset()" [routerLink]="['..']"
-              [disabled]="!itemForm.valid  ">
+      <button class="btn-create " type="reset" (click)="itemForm!.reset()" [routerLink]="['..']"
+              [disabled]="!itemForm.valid">
         Cancel
       </button>
     </div>

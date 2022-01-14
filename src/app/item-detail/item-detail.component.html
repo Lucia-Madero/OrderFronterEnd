@@ -18,7 +18,7 @@
       </li>
     </div>
   </ul>
-  <button class="btn-create" type="submit">Update</button>
-  <button class="btn-create" type="reset" [routerLink]="['../']">Cancel</button>
+  <button class="btn-create" type="button" routerLink="/items/edit/{{item.id}}">Edit</button>
+  <button class="btn-create" type="reset" routerLink="['../']">Cancel</button>
 
 </ng-container>
