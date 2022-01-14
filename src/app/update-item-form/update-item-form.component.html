@@ -1,1 +1,30 @@
-<p>update-item-form works!</p>
+<form [formGroup]="updateItemForm">
+  <div class="card-title"></div>
+
+  <div>
+    <label for="name">Name</label>
+    <br>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label for="description">Description</label>
+    <br>
+    <textarea class="description" id="description" formControlName="description"></textarea>
+    <br>
+    <small><code>{{description.value.length}}</code> / <code></code></small>
+  </div>
+
+  <div>
+    <label for="price">Price</label>
+    <br>
+    <input id="price" type="number" min="1" formControlName="price">
+  </div>
+
+  <div>
+    <label for="amountOfStock">Amount of stock</label>
+    <br>
+    <input id="amountOfStock" min="1" type="number" formControlName="amountOfStock">
+  </div>
+
+</form>

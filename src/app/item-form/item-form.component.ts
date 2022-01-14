@@ -7,13 +7,13 @@ import {Router} from "@angular/router";
 import {AlertMessageType} from "../model/alertTemplate";
 
 @Component({
-  selector: 'app-add-form',
-  templateUrl: './add-form.component.html',
-  styleUrls: ['./add-form.component.css']
+  selector: 'app-item-form',
+  templateUrl: './item-form.component.html',
+  styleUrls: ['./item-form.component.css']
 })
-export class AddFormComponent implements OnInit {
+export class ItemFormComponent implements OnInit {
 
-  addItemForm: FormGroup = this.formBuilder.group(
+  itemForm: FormGroup = this.formBuilder.group(
     {
       name: ['', [Validators.required, Validators.minLength(3)]],
       description: ['', [Validators.required, Validators.maxLength(255)]],
@@ -34,23 +34,23 @@ export class AddFormComponent implements OnInit {
   }
 
   get name(): FormControl{
-    return this.addItemForm.get('name') as FormControl;
+    return this.itemForm.get('name') as FormControl;
   }
 
   get description(): FormControl{
-    return this.addItemForm.get('description') as FormControl;
+    return this.itemForm.get('description') as FormControl;
   }
 
   get price(): FormControl{
-    return this.addItemForm.get('price') as FormControl;
+    return this.itemForm.get('price') as FormControl;
   }
 
   get amountOfStock(): FormControl{
-    return this.addItemForm.get('amountOfStock') as FormControl;
+    return this.itemForm.get('amountOfStock') as FormControl;
   }
 
   onSubmit() {
-    const item: Item =  this.addItemForm.value as Item;
+    const item: Item =  this.itemForm.value as Item;
     this.itemService.addItem(item).subscribe({
       next: () => {
         this.alertMessageService.publish({
@@ -66,10 +66,10 @@ export class AddFormComponent implements OnInit {
           description: error.error.message,
           type: AlertMessageType.DANGER
         });
-        this.addItemForm.enable();
+        this.itemForm.enable();
       }
     });
-    this.addItemForm.reset();
+    this.itemForm.reset();
 
   }
 }

@@ -8,7 +8,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {ItemOverviewComponent} from './item-overview/item-overview.component';
 import {NameFilterPipe} from './pipes/name-filter.pipe';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {AddFormComponent} from './add-form/add-form.component';
+import {ItemFormComponent} from './item-form/item-form.component';
 import {ItemDetailComponent} from './item-detail/item-detail.component';
 import { UpdateItemFormComponent } from './update-item-form/update-item-form.component';
 
@@ -17,7 +17,7 @@ import { UpdateItemFormComponent } from './update-item-form/update-item-form.com
     AppComponent,
     ItemOverviewComponent,
     NameFilterPipe,
-    AddFormComponent,
+    ItemFormComponent,
     ItemDetailComponent,
     UpdateItemFormComponent,
   ],
